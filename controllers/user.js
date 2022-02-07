@@ -29,7 +29,7 @@ exports.login = (req, res) => {
                 error: 'Não tem esse email cadastrado'
             });
         }
-        // se o eamil existe verifica se a senha confere com a cadastrada
+        // se o email existe verifica se a senha confere com a cadastrada
     
         if (!user.authenticate(password)) {
             return res.status(401).json({
@@ -45,3 +45,8 @@ exports.login = (req, res) => {
         return res.json({ token, user: { _id, email, name, role } });
     });
 }
+
+exports.logout = (req, res) => {
+    res.clearCookie('t');
+    res.json({ message: 'Deslogado com sucesso' });
+};
