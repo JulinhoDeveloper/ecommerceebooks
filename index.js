@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const { dbConnection } = require('./database/config');
+const expressValidator = require('express-validator');
 
 // importar as rotas
 const userRoutes = require('./routes/user');
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(cookieParser());
+app.use(expressValidator());
 app.use(cors());
 // Base de dados
 
