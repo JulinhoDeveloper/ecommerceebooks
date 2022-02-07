@@ -6,6 +6,8 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const { dbConnection } = require('./database/config');
 
+// importar as rotas
+const userRoutes = require('./routes/user');
 
 const app = express();
 
@@ -20,7 +22,7 @@ app.use(cors());
 dbConnection();
 
 //rotas
-
+app.use("/api", userRoutes);
 
 
 
