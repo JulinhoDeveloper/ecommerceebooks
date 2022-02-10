@@ -1,6 +1,12 @@
 import React from 'react';
+import Layout from './Layout.js'
 
-const Home = () => <div>Home</div>
+const Home = () => (
+    <Layout title="Home Page" description="E-commerce">
+        
+    </Layout>
+
+);
 
 
 export default Home;
